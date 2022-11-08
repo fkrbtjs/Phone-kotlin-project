@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".ThreeFragment">
+
+    <LinearLayout
+        android:id="@+id/ln_plusNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="0"
+            app:srcCompat="@drawable/plus" />
+
+        <TextView
+            android:id="@+id/tv_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="연락처에 추가"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_phonenum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textColor="#000000"
+        android:textSize="40sp" />
+
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:columnCount="3"
+        android:orientation="horizontal"
+        android:rowCount="4">
+
+        <TextView
+            android:id="@+id/tv_1"
+            android:paddingLeft="40dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="10dp"
+            android:text="1"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_2"
+            android:paddingLeft="40dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="10dp"
+            android:text="2"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_3"
+            android:paddingLeft="40dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="10dp"
+            android:text="3"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_4"
+            android:paddingLeft="40dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="10dp"
+            android:text="4"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_5"
+            android:paddingLeft="40dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="10dp"
+            android:text="5"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_6"
+            android:paddingLeft="40dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="10dp"
+            android:text="6"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_7"
+            android:paddingLeft="40dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="10dp"
+            android:text="7"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_8"
+            android:paddingLeft="40dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="10dp"
+            android:text="8"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_9"
+            android:paddingLeft="40dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="10dp"
+            android:text="9"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_star"
+            android:paddingLeft="40dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="10dp"
+            android:text="*"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_0"
+            android:paddingLeft="40dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="10dp"
+            android:text="0"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_sharp"
+            android:paddingLeft="40dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="10dp"
+            android:text="#"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_camera"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="0"
+            app:srcCompat="@drawable/camera" />
+
+        <ImageView
+            android:id="@+id/iv_phone"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_weight="0"
+            app:srcCompat="@drawable/phonecall" />
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="0"
+            app:srcCompat="@drawable/backspace" />
+    </LinearLayout>
+
+
+</LinearLayout>
