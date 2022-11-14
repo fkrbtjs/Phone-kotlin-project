@@ -13,7 +13,6 @@ class CustomTwoDialog (val context: Context) {
     val dialog = Dialog(context)
     var dataList = mutableListOf<DataVO>()
 
-
     fun showDialog(name: String,phoneNum:String){
         val binding = DialogCustom2Binding.inflate(LayoutInflater.from(context))
         dialog.setContentView(binding.root)
@@ -22,20 +21,18 @@ class CustomTwoDialog (val context: Context) {
         dialog.setCancelable(false)
         dialog.show()
 
-        //취소버튼,ok버튼 이벤트처리
+        //취소버튼 이벤트처리
         binding.btnDelete.setOnClickListener {
             val dataVO = DataVO(name,phoneNum,R.drawable.ic_baseline_person_24)
             (context as MainActivity).oneFragment.refreshRecyclerViewDrop(dataVO)
             (context as MainActivity).refreshRecyclerViewDrop3(dataVO)
             dialog.dismiss()
         }
-
+        //확인버튼 이벤트처리
         binding.btnFavor.setOnClickListener {
-
             val dataVO = DataVO(name,phoneNum,R.drawable.ic_baseline_person_24)
                 (context as MainActivity).refreshRecyclerViewAdd3(dataVO)
                 dialog.dismiss()
-
         }
     }
 }
