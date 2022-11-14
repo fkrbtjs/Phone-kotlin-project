@@ -9,16 +9,13 @@ import android.widget.Toast
 import aop.part3.phone.databinding.FragmentThreeBinding
 import java.text.SimpleDateFormat
 
-
 class ThreeFragment : Fragment() {
-
     lateinit var binding : FragmentThreeBinding
     lateinit var customAdapter: CustomAdapter
     var dataList2 = mutableListOf<DataVO2>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -61,11 +58,9 @@ class ThreeFragment : Fragment() {
             }else{
                 Toast.makeText(context,"전화번호를 입력해주세요",Toast.LENGTH_SHORT).show()
             }
-
         }
 
         binding.ivPhone.setOnClickListener {
-
             val phoneNum = binding.tvPhonenum.text.toString()
             val currentTime : Long = System.currentTimeMillis()
             val dataFormat = SimpleDateFormat("yy.MM.dd")
@@ -76,17 +71,10 @@ class ThreeFragment : Fragment() {
                 dataVO2 = DataVO2(phoneNum,now.toString())
                 (context as MainActivity).twoFragment.refreshRecyclerViewAdd2(dataVO2)
             }else{
-
             }
-
         }
-
-
-
-
         return binding.root
     }
-
 
     private fun addNumber(i: Int) {
         if(binding.tvPhonenum.text.toString().length==3 || binding.tvPhonenum.text.toString().length==8 ){
@@ -100,8 +88,4 @@ class ThreeFragment : Fragment() {
         dataList2.remove(dataVO2)
         customAdapter.notifyDataSetChanged()
     }
-
-
-
-
 }
