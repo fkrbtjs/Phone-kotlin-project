@@ -23,6 +23,7 @@
 - ViewPager를 사용하여 화면 스와이프기능 추가
 - RecyclerView를 사용하여 리스트형식으로 연락처 및 최근통화 목록 표현
 - NavigationView를 사용하여 연락처에서 즐겨찾기할수있는 기능 추가
+- intent활용하여 Activity간 정보전달
 
 ## 실행화면
 
