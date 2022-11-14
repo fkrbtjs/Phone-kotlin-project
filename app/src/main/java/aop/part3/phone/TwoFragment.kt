@@ -10,16 +10,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import aop.part3.phone.databinding.FragmentOneBinding
 import aop.part3.phone.databinding.FragmentTwoBinding
 
-
 class TwoFragment : Fragment() {
-
     lateinit var binding : FragmentTwoBinding
-    var dataList2 = mutableListOf<DataVO2>()
     lateinit var customAdapter2: CustomAdapter2
+    var dataList2 = mutableListOf<DataVO2>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -40,7 +37,6 @@ class TwoFragment : Fragment() {
     }
 
     fun refreshRecyclerViewDrop2(dataVO2: DataVO2) {
-
         dataList2.remove(dataVO2)
         customAdapter2.notifyDataSetChanged()
     }
@@ -50,5 +46,4 @@ class TwoFragment : Fragment() {
         dataList2.add(dataVO2)
         customAdapter2.notifyDataSetChanged()
     }
-
 }
