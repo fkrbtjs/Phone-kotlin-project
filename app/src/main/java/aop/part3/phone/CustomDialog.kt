@@ -14,7 +14,6 @@ class CustomDialog(val context: Context) {
 
     val dialog = Dialog(context)
 
-
     fun showDialog(data: String){
         val binding = DialogCustomBinding.inflate(LayoutInflater.from(context))
         dialog.setContentView(binding.root)
@@ -24,11 +23,11 @@ class CustomDialog(val context: Context) {
         dialog.show()
         binding.etPhoneNumber.setText(data)
 
-        //취소버튼,ok버튼 이벤트처리
+        //취소버튼 이벤트처리
         binding.btnCancle.setOnClickListener {
             dialog.dismiss()
         }
-
+        //확인버튼 이벤트처리
         binding.btnOk.setOnClickListener {
             val name = binding.etName.text.toString()
             val phoneNumber = binding.etPhoneNumber.text.toString()
@@ -41,7 +40,6 @@ class CustomDialog(val context: Context) {
             }else{
                 Toast.makeText(context,"이름과 전화번호를 모두 입력해주세요", Toast.LENGTH_SHORT).show()
             }
-
         }
     }
 }
