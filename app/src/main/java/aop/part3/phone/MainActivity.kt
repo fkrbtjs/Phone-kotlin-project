@@ -11,7 +11,6 @@ import aop.part3.phone.databinding.ActivityMainBinding
 import aop.part3.phone.databinding.UsertabButtonBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
-
 class MainActivity : AppCompatActivity() {
 
     lateinit var oneFragment: OneFragment
@@ -19,8 +18,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var threeFragment: ThreeFragment
     lateinit var toggle : ActionBarDrawerToggle
     lateinit var binding : ActivityMainBinding
-    var dataList = mutableListOf<DataVO>()
     lateinit var customAdapter: CustomAdapter
+    var dataList = mutableListOf<DataVO>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,15 +32,17 @@ class MainActivity : AppCompatActivity() {
 
         //ActionBarDrawerToggle 버튼적용
         toggle = ActionBarDrawerToggle(this,binding.drawerlayout,R.string.drawer_open,R.string.drawer_close)
+       
         //업버튼 활성화
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+       
         //토글 sync
         toggle.syncState()
-
 
         //drawlayout fragment***************************************************************************
         val pagerAdapter = PagerAdapter(this)
         val title = mutableListOf<String>("연락처","최근통화","키패드")
+       
         oneFragment = OneFragment()
         twoFragment = TwoFragment()
         threeFragment = ThreeFragment()
@@ -52,31 +53,26 @@ class MainActivity : AppCompatActivity() {
 
         binding.viewpager.adapter = pagerAdapter
 
-
         //네비게이션뷰 리사이클러뷰 붙히기***************************************************************************
         val linearLayoutManager = LinearLayoutManager(this)
 
         //리사이클러뷰에 제공할 어뎁터
         customAdapter = CustomAdapter(dataList)
+        
         //리사이클러뷰에 연결
         binding.naviRecyclerview.layoutManager = linearLayoutManager
         binding.naviRecyclerview.adapter = customAdapter
-
-
 
         // 탭레이아웃과 뷰페이저 연결************************************************************************
 
         TabLayoutMediator(binding.tablayout,binding.viewpager){ tab, position->
             tab.setCustomView(createTabView(title[position]))
         }.attach()
-
-
     }
 
     fun changeToThreeFragment(){
         binding.viewpager.currentItem = 2
     }
-
 
     // 탭레이아웃과 뷰페이저 연결************************************************************************
 
@@ -96,7 +92,6 @@ class MainActivity : AppCompatActivity() {
         if(toggle.onOptionsItemSelected(item)){
             return true
         }
-
         return super.onOptionsItemSelected(item)
     }
 
@@ -106,15 +101,8 @@ class MainActivity : AppCompatActivity() {
         customAdapter.notifyDataSetChanged()
     }
 
-
-
     fun refreshRecyclerViewDrop3(dataVO: DataVO) {
         dataList.remove(dataVO)
         customAdapter.notifyDataSetChanged()
     }
-
-
-
-
-
 }
