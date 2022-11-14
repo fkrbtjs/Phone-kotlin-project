@@ -3,19 +3,13 @@ package aop.part3.phone
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-
 import aop.part3.phone.databinding.ItemRecordBinding
 
 class CustomAdapter2(val dataList2:MutableList<DataVO2>): RecyclerView.Adapter<CustomAdapter2.CustomViewHolder2>() {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder2 {
         val binding = ItemRecordBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         val customViewHolder2 = CustomViewHolder2(binding)
-
-
-        //리사이클러뷰 아이템을 클릭했을때 추가
-
 
         //리사이클러뷰 아이템을 길게 클릭했을때 삭제
         customViewHolder2.itemView.setOnLongClickListener {
