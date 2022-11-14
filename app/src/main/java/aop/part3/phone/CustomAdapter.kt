@@ -7,11 +7,10 @@ import aop.part3.phone.databinding.ItemMainBinding
 
 class CustomAdapter(val dataList:MutableList<DataVO>): RecyclerView.Adapter<CustomAdapter.CustomViewHolder>() {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
+       
         val binding = ItemMainBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         val customViewHolder = CustomViewHolder(binding)
-
 
         //리사이클러뷰 아이템을 클릭했을때 threefrag 넘어가면서 번호 주기 추가
         customViewHolder.itemView.setOnClickListener {
@@ -26,7 +25,6 @@ class CustomAdapter(val dataList:MutableList<DataVO>): RecyclerView.Adapter<Cust
             val position : Int = customViewHolder.bindingAdapterPosition
             val name = dataList.get(position).name
             val phoneNum = dataList.get(position).phoneNumber
-
             val dialog = CustomTwoDialog(binding.root.context)
             dialog.showDialog(name, phoneNum)
             true
@@ -48,4 +46,3 @@ class CustomAdapter(val dataList:MutableList<DataVO>): RecyclerView.Adapter<Cust
 
     class CustomViewHolder(val binding: ItemMainBinding):RecyclerView.ViewHolder(binding.root)
 }
-
